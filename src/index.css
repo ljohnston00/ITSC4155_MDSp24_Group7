@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+
+/*Global*/
+#root{
+    background-color: #004643;
+}
+
+body{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Droid Sans', 'Helvetica', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code{
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+
+/*Header*/
+.App-header-loggedIn {
+    background-color: #0C1618;
+  }
+
+.ul-loggedIn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    width: 100%;
+    height: 70px;
+    gap: 2em;
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: #FAF4D3;;
+}
+
+.Title{
+    background-color: #004643;
+    padding: .5rem;
+    border-radius: 8px;
+  }
+
+.Title:hover{
+    background-color: #0C1618;
+    padding: .5rem;
+    border-radius: 8px;
+}
+
+.nonTitle{
+    padding: .5rem;
+}
+
+.nonTitle:hover{
+    background-color: #004643;
+    padding: .5rem;
+    border-radius: 8px;
+}
+
+.settings{
+    padding: .5rem;
+    font-size: xx-large;
+    align-items: right;
+    justify-content: right;
+}
+.settings:hover{
+    background-color: #004643;
+    padding: .5rem;
+    border-radius: 8px;    
+}
+  
+.profile{
+    padding: .5rem;
+    font-size: xx-large;
+    align-items: left;
+    justify-content: left;
+}
+
+.profile:hover{
+    background-color: #004643;
+    padding: .5rem;
+    border-radius: 8px;    
+}
+
+.App-header-notLoggedIn{
+    background-color: #0C1618;
+}
+
+.Title-notLoggedIn{
+    background-color: #004643;
+    padding: .5rem;
+    border-radius: 8px;
+    order: -1;
+    margin-left: .5em;
+}
+
+.Title-notLoggedIn:hover{
+    background-color: #0C1618;
+    padding: .5rem;
+    border-radius: 8px;
+}
+
+.ul-notLoggedIn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    width: 100%;
+    height: 70px;
+    gap: 2em;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nonTitle-nLI:nth-child(2){
+    margin-left: auto;
+}
+
+.nonTitle-nLI{
+    padding: .5rem;
+    margin-right: .5em;
+}
+
+.nonTitle-nLI:hover{
+    background-color: #004643;
+    padding: .5rem;
+    border-radius: 8px;
+}
+
+
+/*index*/
+.index{
+    /*background-color: #004643;*/
+    height: 80vh;
+    color: #FAF4D3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.bottom{
+    max-width: 80%;
+    margin: 0 auto;
+}
+  
+.ASP{
+    margin-top: 0;
+    margin-bottom: auto;
+    font-size: x-large;
+ }
+  
+.MM{
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    font-size: xxx-large;
+    font-weight: 500;
+}
+
+
+.index-nLIpt1{
+    height: 80vh;
+    color: #FAF4D3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.index-nLIpt2{
+    background-color: #3F7267;
+    height: 80vh;
+    color: #FAF4D3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.data{
+    font-size: xxx-large;
+    max-width: 20%;
+}
+
+.data-img{
+    min-width: 60%;
+}
+
+.index-nLIpt3{
+    background-color: #7D9D8B;
+    height: 80vh;
+    color: #FAF4D3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*Live Markets*/
+.live{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.sideBar{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    padding: 20px;
+    background-color: #0C1618;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+    height: 100%;
+    height: 80vh;
+}
+.graphs{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.graph{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Footer*/
+footer{
+    background-color: #004643;
+    color: #FAF4D3;
+    display: flex;
+    justify-content: center;
+}
+
