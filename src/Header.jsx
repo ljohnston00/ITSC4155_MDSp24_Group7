@@ -21,9 +21,9 @@ function Header(props){
   <header className="App-header-notLoggedIn">
       <nav>   
         <ul className="ul-notLoggedIn">
-          <li className='App-link Title-notLoggedIn'><a href="#">MoneyMarket</a></li>  
-          <li className='App-link nonTitle-nLI'><a href="#">Dashboard</a></li>
-          <li className='App-link nonTitle-nLI'><a href="#">Log In</a></li>
+          <li className='App-link Title-notLoggedIn'><a href="/">MoneyMarket</a></li>  
+          <li className='App-link nonTitle-nLI'><a href="/Dashboard">Dashboard</a></li>
+          <li className='App-link nonTitle-nLI'><a href="/Login">Log In</a></li>
         </ul>
       </nav>
   </header>
