@@ -331,7 +331,7 @@ input[type="checkbox"] + label:before {
 }
 
 input[type="checkbox"]:checked + label:before {
-  background-color: #FAF4D3; /* Background color when checked */
+  background-color: #2a2b38; /* Background color when checked */
 }
 
 input[type="number"]{
@@ -473,7 +473,7 @@ h6 span {
 .card-front,
 .card-back {
   width: 100%;
-  height: 100%;
+  height: 120%;
   background-color: #2a2b38;
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -489,6 +489,7 @@ h6 span {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+
 .card-back {
   transform: rotateY(180deg);
 }

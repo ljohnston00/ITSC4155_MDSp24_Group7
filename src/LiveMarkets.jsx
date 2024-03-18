@@ -5,13 +5,34 @@ function LiveMarkets(){
 
  const [stockdata, setStockData] = useState([]);
 
-  useEffect(()=>{
-    fetch('/api/stockdata')
-    .then((res) => res.json())
-    .then(data => setStockData(data));
+ useEffect(() => {
+  const fetchTickerData = async () => {
+      try {
+          const response = await fetch('http://localhost:5000/stockdata/ticker', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                "tickerName": "AAPL",
+                "timeSpan": "1m",
+                "startDate": "2022-01-01",
+                "endDate": "2022-01-31",
+                "limit": "100"
+              })
+          });
 
+          const data = await response.json();
+          setStockData(data);
+      } catch (error) {
+          console.error("Error fetching ticker data: ", error);
+      }
+  };
+
+  fetchTickerData();
 }, []);
 
+    
 return (
     <div className="container-fluid">
       <div className="row">
