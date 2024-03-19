@@ -1,3 +1,5 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Nav, Navbar } from 'react-bootstrap';
 
 function Header(props){
 
@@ -18,7 +20,8 @@ function Header(props){
           </nav>
       </header> :
 
-  <header className="App-header-notLoggedIn">
+      
+  /*<header className="App-header-notLoggedIn">
       <nav>   
         <ul className="ul-notLoggedIn">
           <li className='App-link Title-notLoggedIn'><a href="/">MoneyMarket</a></li>  
@@ -26,7 +29,14 @@ function Header(props){
           <li className='App-link nonTitle-nLI'><a href="/Login">Log In</a></li>
         </ul>
       </nav>
-  </header>
+  </header>*/
+
+    <Navbar className = "App-header-notLoggedIn">
+        <Navbar.Brand className = 'App-link Title-notLoggedIn'><a href="/">MoneyMarket</a></Navbar.Brand>  
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/Dashboard">Dashboard</Nav.Link>
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/Login">Log In</Nav.Link>
+    </Navbar>
+  
     );
 }
 
