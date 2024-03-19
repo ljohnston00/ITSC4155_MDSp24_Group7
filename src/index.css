@@ -343,15 +343,55 @@ input[type="number"]{
   border-color: #0C1618;
   color: #FAF4D3;
 }
-.graphs{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+
 .graph{
     display: flex;
     flex-direction: column;
 }
+.sideBar{
+  position: fixed;
+  width: 250px;
+  transform: translateX(-100%);
+  transition: transform 1s ease-out;
+  z-index: 1;
+}
+.sideBar.show{
+  width: 250px !important;
+  transform: translateX(0);
+}
+
+.container-fluid.blur{
+  filter: blur(5px);
+}
+
+.stockCard{
+  width: 200px;
+  height: 400px;
+  margin-bottom: 1rem;
+  margin-left: 6rem;
+ padding-right: 1rem;
+}
+
+.toggleButton {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 30px;
+  z-index: 1;
+  margin-left: 1rem;
+}
+
+
+
+.toggleButton:active{
+  background-color: #191A2D;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
 
 
 /*Footer*/
