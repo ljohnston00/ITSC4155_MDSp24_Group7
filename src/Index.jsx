@@ -1,6 +1,7 @@
 import firstPicture from './assets/MM1.jpg'
 import secondPicture from './assets/MM2.png'
 import thirdPicture from './assets/MM3.png'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 function Index(){
