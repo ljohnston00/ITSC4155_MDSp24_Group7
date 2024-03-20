@@ -11,6 +11,4 @@ To start:
 npm Run Dev
 
 Required:
-npm install vite
-npm i react-auth-kit
-npm i cookie
+npm install vite react-auth-kit cookie react-apexcharts apexcharts

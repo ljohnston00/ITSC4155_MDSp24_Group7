@@ -1,25 +1,29 @@
 import Cookies from 'js-cookie';
-import React, { useState } from 'react';
-
 
 const signinHandler = async (email, password) => {
-    try {
-      const signInResponse = await fetch('http://localhost:5000/auth/signin', {
+    try{
+    const signInResponse = await fetch('http://localhost:5000/auth/signin', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          "email": email,
-          "password": password
+        "email": email,
+        "password": password
         })
-      });
-      Cookies.set("Authorization", (await signInResponse.json()).access_token);
-    } catch (err) {
-      console.log(err);
+    });
+
+    if(!signInResponse.ok){
+        throw new Error('Invalid email or password');
     }
+    const signInData = await signInResponse.json();
+    Cookies.set("Authorization", signInData.access_token);
+    localStorage.setItem('isLoggedIn', 'true');
+    return true;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+};
 
-   
-  };
-
-  export default signinHandler;
+export default signinHandler;

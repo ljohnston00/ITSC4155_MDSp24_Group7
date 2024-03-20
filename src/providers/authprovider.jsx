@@ -1,13 +1,15 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
-// Create a context
 const AuthContext = createContext();
 
-// Create a provider component
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState(null);
 
-  // Value to be provided to consuming components
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    setAuth(isLoggedIn === 'true');
+  }, []);
+
   const value = { auth, setAuth };
 
   return (
@@ -17,7 +19,7 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the auth context
+
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context === undefined) {

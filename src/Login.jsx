@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import signinHandler from './services/signin.service';
 import createAccount from './services/createAccount.service';
+import { useAuth } from './providers/authprovider';
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 function Index(){
@@ -9,6 +13,24 @@ function Index(){
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState(false);
+  const { setAuth } = useAuth();
+  const nav = useNavigate();
+
+  const handleLogin = async () => {
+    try {
+      const success = await signinHandler(email, password);
+      if (success) {
+        setAuth(true); 
+        setLoginError(''); 
+        nav('/');
+      } else {
+        setLoginError('Invalid email or password');
+      }
+    } catch (error) {
+      setLoginError('An error occurred during login');
+    }
+  };
 
   return(
   <div className="section">
@@ -33,7 +55,8 @@ function Index(){
                         <input type="password" name="logpass" password={password} className="form-style" placeholder="Your Password" id="logpass" onChange={e => setPassword(e.target.value)}></input>
                         <i className="input-icon uil uil-lock-alt"></i>
                       </div>
-                      <a onClick={()=> signinHandler(email, password)} className="btn mt-4" >submit</a>
+                      <a onClick={handleLogin} className="btn mt-4" >submit</a>
+                      {loginError && <p>{loginError}</p>}
                       <p className="mb-0 mt-4 text-center"><a href="#0" className="link">Forgot your password?</a></p>
                     </div>
                   </div>

@@ -6,7 +6,14 @@ function Header(props){
     return(
 
       props.isLoggedIn ? 
-        <header className="App-header-loggedIn">
+      <Navbar className = "App-header-notLoggedIn">
+        <Navbar.Brand className = 'App-link Title-notLoggedIn'><a href="/">MoneyMarket</a></Navbar.Brand>  
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/Dashboard">Dashboard</Nav.Link>
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/Login">Logout</Nav.Link>
+    </Navbar>
+        :
+
+        /*<header className="App-header-loggedIn">
           <nav>   
             <ul className="ul-loggedIn">
               <li className='material-symbols-outlined App-link profile'><a href="#">Account_Circle</a></li>
@@ -18,7 +25,7 @@ function Header(props){
               <li className='material-symbols-outlined App-link settings'><a href="#">Settings</a></li>
             </ul>
           </nav>
-      </header> :
+      </header>*/
 
       
   /*<header className="App-header-notLoggedIn">

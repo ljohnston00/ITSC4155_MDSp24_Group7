@@ -291,16 +291,26 @@ a{
 
 .sideBar{
   position: static;
-  top: 90px;
+  top: 5rem;
   bottom: 0;
   left: 0;
   padding: 20px;
   overflow-y: auto;
   background-color: #0C1618;
   color: #FAF4D3;
-  height: 100vh;
+  height: 90vh;
   border-radius: 8px;
+  overflow-y: auto;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
+
+.sideBar::-webkit-scrollbar {
+  display: none;
+}
+
+
+
 .dateI{
   background-color: #004643;
   color: #FAF4D3;
