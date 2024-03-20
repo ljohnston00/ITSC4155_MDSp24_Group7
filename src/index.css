@@ -376,10 +376,16 @@ input[type="number"]{
 .stockCard{
   width: 200px;
   height: 400px;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 6rem;
  padding-right: 1rem;
+ background-color: #0C1618;
 }
+.card-title{
+  color: #FAF4D3;
+}
+
 
 .toggleButton {
   position: fixed;

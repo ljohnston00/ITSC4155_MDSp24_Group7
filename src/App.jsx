@@ -21,8 +21,8 @@ const { auth } = useAuth();
           <Routes>
             <Route path='/' element={<><Index /> <h1>{}</h1></>}></Route>
             <Route path='/stockdata' element={<LiveMarkets/>}></Route>
-            <Route path='/Dashboard' element={<Dashboard/>}></Route>
-            <Route path='/Login' element={<Login/>}></Route>
+            <Route path='/dashboard' element={<Dashboard/>}></Route>
+            <Route path='/login' element={<Login/>}></Route>
           </Routes>
           </div>
 

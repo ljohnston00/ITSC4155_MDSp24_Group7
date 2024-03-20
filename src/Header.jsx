@@ -8,8 +8,8 @@ function Header(props){
       props.isLoggedIn ? 
       <Navbar className = "App-header-notLoggedIn">
         <Navbar.Brand className = 'App-link Title-notLoggedIn'><a href="/">MoneyMarket</a></Navbar.Brand>  
-        <Nav.Link className = 'App-link nonTitle-nLI' href="/Dashboard">Dashboard</Nav.Link>
-        <Nav.Link className = 'App-link nonTitle-nLI' href="/Login">Logout</Nav.Link>
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/dashboard">Dashboard</Nav.Link>
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/login">Logout</Nav.Link>
     </Navbar>
         :
 
@@ -40,8 +40,8 @@ function Header(props){
 
     <Navbar className = "App-header-notLoggedIn">
         <Navbar.Brand className = 'App-link Title-notLoggedIn'><a href="/">MoneyMarket</a></Navbar.Brand>  
-        <Nav.Link className = 'App-link nonTitle-nLI' href="/Dashboard">Dashboard</Nav.Link>
-        <Nav.Link className = 'App-link nonTitle-nLI' href="/Login">Log In</Nav.Link>
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/dashboard">Dashboard</Nav.Link>
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/login">Log In</Nav.Link>
     </Navbar>
   
     );
