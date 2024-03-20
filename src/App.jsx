@@ -6,6 +6,7 @@ import Dashboard from './Dashboard.jsx'
 import Login from './Login.jsx'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react'
+import { AuthProvider } from './providers/authprovider.jsx';
 
 
 
@@ -15,6 +16,7 @@ function App() {
 
   let isLoggedIn = false;
   return (
+    <AuthProvider>
     <Router>
       <>
         <Header isLoggedIn={isLoggedIn}/>
@@ -33,6 +35,7 @@ function App() {
         <Footer/>
       </>
     </Router>
+    </AuthProvider>
   );
 }
 

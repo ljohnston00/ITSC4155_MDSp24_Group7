@@ -12,5 +12,5 @@ npm Run Dev
 
 Required:
 npm install vite
-npm install @observablehq/runtime @observablehq/stdlib
-npm i d3
+npm i react-auth-kit
+npm i cookie
