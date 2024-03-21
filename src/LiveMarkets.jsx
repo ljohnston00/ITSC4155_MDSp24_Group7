@@ -6,9 +6,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function LiveMarkets(){
 
- const [stockdata, setStockData] = useState([]);
- const [showSidebar, setShowSidebar] = useState(false);
- const [numCards, setNumCards] = useState(6);
+  const [timeSpan, setTimeSpan] = useState('week');
+  const [startDate, setStartDate] = useState('2024-01-01');
+  const [endDate, setEndDate] = useState('2024-03-15');
+  const [showSidebar, setShowSidebar] = useState(false);
+  const [numCards, setNumCards] = useState(6);
+
+
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -17,48 +21,21 @@ function LiveMarkets(){
   const handleNumCardsChange = (event) => {
     setNumCards(event.target.value);
   };
-/*
- useEffect(() => {
-  const fetchTickerData = async () => {
-      try {
-          const response = await fetch('http://localhost:5000/stockdata/ticker', {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                "tickerName": "AAPL",
-                "timeSpan": "1m",
-                "startDate": "2022-01-01",
-                "endDate": "2022-01-31",
-                "limit": "100"
-              })
-          });
 
-          const data = await response.json();
-          setStockData(data);
-      } catch (error) {
-          console.error("Error fetching ticker data: ", error);
-      }
-  };
-
-  fetchTickerData();
-}, []);
-*/
     
 return (
     <div className="container-fluid">
       <div className="row">
         <div>
           <Button className='toggleButton' onClick={toggleSidebar}>Adjust Graphs</Button>
-          <Sidebar show={showSidebar} toggle={toggleSidebar} onNumCardsChange={handleNumCardsChange} />
+          <Sidebar show={showSidebar} toggle={toggleSidebar} onNumCardsChange={handleNumCardsChange} setStartDate={setStartDate} setEndDate={setEndDate} setTimeSpan={setTimeSpan} />
           </div>
           <div>
           <Row>
         {numCards > 0 ? (
           Array.from({ length: numCards }, (_, i) => (
-            <Col sm={12} md={6} lg={4} key={i}>
-              <StockCard />
+            <Col sm={12} md={8} lg={6} key={i}>
+              <StockCard timeSpan={timeSpan} startDate={startDate} endDate={endDate} />
             </Col>
           ))
         ) : (

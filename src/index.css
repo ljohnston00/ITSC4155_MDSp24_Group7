@@ -36,6 +36,7 @@ code{
 a{
     text-decoration: none !important;
     color: #FAF4D3 !important;
+    border-radius: 8px;
 }
 
 
@@ -375,7 +376,7 @@ input[type="number"]{
 
 .stockCard{
   width: 200px;
-  height: 400px;
+  height: 450px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   margin-left: 6rem;

@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
+import signoutHandler from './services/logout.service';
 import { Nav, Navbar } from 'react-bootstrap';
 
 function Header(props){
@@ -9,7 +10,8 @@ function Header(props){
       <Navbar className = "App-header-notLoggedIn">
         <Navbar.Brand className = 'App-link Title-notLoggedIn'><a href="/">MoneyMarket</a></Navbar.Brand>  
         <Nav.Link className = 'App-link nonTitle-nLI' href="/dashboard">Dashboard</Nav.Link>
-        <Nav.Link className = 'App-link nonTitle-nLI' href="/login">Logout</Nav.Link>
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/stockdata">Live Markets</Nav.Link>
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/login" onClick={signoutHandler}>Logout</Nav.Link>
     </Navbar>
         :
 

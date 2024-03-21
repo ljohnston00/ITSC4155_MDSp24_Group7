@@ -24,6 +24,7 @@ function Index(){
         setAuth(true); 
         setLoginError(''); 
         nav('/');
+        window.scrollTo(0, 0);
       } else {
         setLoginError('Invalid email or password');
       }
