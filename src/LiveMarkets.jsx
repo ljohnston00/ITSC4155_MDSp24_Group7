@@ -25,6 +25,7 @@ function LiveMarkets(){
     
 return (
     <div className="container-fluid">
+      <h1 className='liveMarketsTitle'>Live Markets</h1>
       <div className="row">
         <div>
           <Button className='toggleButton' onClick={toggleSidebar}>Adjust Graphs</Button>

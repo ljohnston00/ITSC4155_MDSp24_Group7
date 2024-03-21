@@ -289,17 +289,29 @@ a{
     flex-direction: row;
     justify-content: space-around;
 }
+.liveMarketsTitle{
+  margin: 1rem;
+  padding: .5rem;
+  background-color: #0C1618;
+  border-radius: 8px;
+}
+.container-fluid{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .sideBar{
   position: static;
-  top: 5rem;
+  top: 1rem;
   bottom: 0;
   left: 0;
   padding: 20px;
   overflow-y: auto;
   background-color: #0C1618;
   color: #FAF4D3;
-  height: 90vh;
+  height: 100vh;
   border-radius: 8px;
   overflow-y: auto;
   -ms-overflow-style: none;  
@@ -382,6 +394,7 @@ input[type="number"]{
   margin-left: 6rem;
  padding-right: 1rem;
  background-color: #0C1618;
+ width: 30rem;
 }
 .card-title{
   color: #FAF4D3;
@@ -417,7 +430,31 @@ footer{
     display: flex;
     justify-content: center;
 }
-
+/* News Page*/
+.newsCard{ 
+  border: 1px solid #ddd;
+  padding: 10px; 
+  margin: 10px;
+  border-radius: 8px;
+  background-color: #0C1618;
+  border-color: #0C1618;
+  text-align: center;
+}
+.newsPage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.newsPageTitle{
+  margin: 1rem;
+  padding: .5rem;
+  background-color: #0C1618;
+  border-radius: 8px;
+}
+.newsImage{
+  width: 100%;
+}
 
 /*Login/Signup*/
 

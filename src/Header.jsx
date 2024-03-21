@@ -11,6 +11,7 @@ function Header(props){
         <Navbar.Brand className = 'App-link Title-notLoggedIn'><a href="/">MoneyMarket</a></Navbar.Brand>  
         <Nav.Link className = 'App-link nonTitle-nLI' href="/dashboard">Dashboard</Nav.Link>
         <Nav.Link className = 'App-link nonTitle-nLI' href="/stockdata">Live Markets</Nav.Link>
+        <Nav.Link className = 'App-link nonTitle-nLI' href="/news">News</Nav.Link>
         <Nav.Link className = 'App-link nonTitle-nLI' href="/login" onClick={signoutHandler}>Logout</Nav.Link>
     </Navbar>
         :
