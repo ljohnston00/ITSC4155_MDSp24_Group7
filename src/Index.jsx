@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap'
 function Index(){
 
     return(
-      /*
+      /* Not Mine
       <div>
 
         <div className='index-nLIpt1'>
