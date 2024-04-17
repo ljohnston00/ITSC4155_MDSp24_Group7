@@ -13,10 +13,10 @@ const StockCard = ( { timeSpan, startDate, endDate }) => {
 return (
   <Card className='stockCard'>
     <Card.Body>
-      <Form.Control type="text" placeholder="Enter ticker" value={ticker} onChange={e => setTicker(e.target.value)}
-      />
+      <Form.Control type="text" placeholder="Enter ticker" value={ticker} onChange={e => setTicker(e.target.value)}/>
       <Card.Title>{ticker.toLocaleUpperCase()}</Card.Title>
-      <ReactApexChart options={options} series={series} type="line" height={350} />
+      <ReactApexChart options={options} series={series} type="line" height={350}/>
+  
     </Card.Body>
   </Card>
 );

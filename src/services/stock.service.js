@@ -22,7 +22,7 @@ export const fetchStockData = async (ticker, timeSpan, startDate, endDate) => {
       const data = await response.json();
       return data;
     } else {
-        onsole.log('Failed to fetch stock data');
+        console.log('Failed to fetch stock data');
     return [];
   }
 };

@@ -8,6 +8,8 @@ import News from './News.jsx'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react'
 import { AuthProvider, useAuth} from './providers/authprovider.jsx';
+import LearningSeries from './LearningSeries.jsx'
+import LearningSeriesHub from './LearningSeriesHub.jsx'
 
 
 
@@ -25,6 +27,8 @@ const { auth } = useAuth();
             <Route path='/news' element={<News/>}></Route>
             <Route path='/dashboard' element={<Dashboard/>}></Route>
             <Route path='/login' element={<Login/>}></Route>
+            <Route path='/learninghub' element={<LearningSeriesHub/>}></Route>
+            <Route path='/series/:seriesId' element={<LearningSeries/>}></Route>
           </Routes>
           </div>
 

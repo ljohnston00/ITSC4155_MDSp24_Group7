@@ -430,30 +430,193 @@ footer{
     display: flex;
     justify-content: center;
 }
-/* News Page*/
-.newsCard{ 
-  border: 1px solid #ddd;
-  padding: 10px; 
-  margin: 10px;
-  border-radius: 8px;
-  background-color: #0C1618;
-  border-color: #0C1618;
-  text-align: center;
+/* News Page */
+.newsCard{
+  background-color: #7D9D8B;
+  display: flex;
+  margin: 1rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  border-style: none;
+  transition: transform 0.3s ease-in-out; 
+  min-width: 100px;
+  max-width: 350px;
+  
 }
+
+@keyframes clickAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.newsCard:active {
+  animation: clickAnimation 0.3s ease-in-out;
+}
+.newsCard:hover {
+  transform: scale(1.05);
+}
+
+.newsCard .image{
+  min-width: 100px;
+  max-width: 100%;
+  min-height: 40px;
+  max-height: 150px;
+}
+
+.newsCard .title{
+  padding: 1rem;
+  padding-top: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
 .newsPage{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .newsPageTitle{
   margin: 1rem;
   padding: .5rem;
-  background-color: #0C1618;
+  background-color: #7D9D8B;
   border-radius: 8px;
+  text-align: center;
+  width: 90%;
 }
+
 .newsImage{
   width: 100%;
+}
+
+/*Learning Page*/
+.learningSeriesCard{
+  background-color: #7D9D8B;
+  display: flex;
+  margin: 1rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  border-style: none;
+  transition: transform 0.3s ease-in-out; 
+}
+
+@keyframes clickAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.learningSeriesCard:active {
+  animation: clickAnimation 0.3s ease-in-out;
+}
+.learningSeriesCard:hover {
+  transform: scale(1.05);
+}
+
+.learningSeriesCard .image{
+  min-width: 100px;
+  max-width: 100%;
+  min-height: 40px;
+  max-height: 150px;
+}
+
+.learningSeriesCard .title{
+  padding: 1rem;
+  padding-top: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+.learningSeriesCard .author{
+  padding: 0;
+}
+
+.learningTitle{
+  margin: 1rem;
+  padding: .5rem;
+  background-color: #7D9D8B;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.seriesSidebar{
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #2a2b38;
+  border-radius: 8px;
+  padding: .5rem;
+}
+
+.seriesParts{
+  background-color: #0C1618!important;
+  border-color: #2a2b38;
+  color: #FAF4D3 !important;
+}
+
+.seriesParts:hover{
+  background-color: #191A2D !important;
+  color: #ffeba7 !important;
+  transform: scale(1.01);
+}
+
+.seriesParts:active{
+  animation: clickAnimation 0.3s ease-in-out;
+}
+
+.seriesContent{
+  overflow-y: auto;
+  height: 100vh;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-left: 0;
+}
+
+.series{
+  background-color: #7D9D8B;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.seriesImage{
+  max-width: 500px;
+  max-height: 1000px;
+  border-radius: 8px;
+}
+
+.seriesPreviousBtn{
+  background-color: #0C1618 !important;
+  color: #FAF4D3 !important;
+} 
+
+.seriesPreviousBtn:hover{
+  background-color: #191A2D !important;
+  color: #FAF4D3 !important;
+} 
+
+.seriesNextBtn{
+  background-color: #0C1618 !important;
+  color: #FAF4D3 !important;
+}
+
+.seriesNextBtn:hover{
+  background-color: #191A2D !important;
+  color: #FAF4D3 !important;
+}
+
+
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .seriesSidebar {
+    display: none;
+  }
 }
 
 /*Login/Signup*/
