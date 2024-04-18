@@ -56,8 +56,8 @@ function Index(){
       <div>
         <section className = 'section'>
           <div className='index-nLIpt1'>
-            <div className='MM'>Money Market</div>
-            <div className='ASP'>Alpha Storm Project</div>
+            <div className='MM'>Learn and invest in stocks in Money Market</div>
+            {/*<div className='ASP'>Alpha Storm Project</div>*/}
           </div>
         </section>
 
@@ -102,7 +102,7 @@ function Index(){
           </div>
         </section>
 
-    </div> 
+      </div> 
     );
 }
 
