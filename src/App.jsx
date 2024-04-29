@@ -10,6 +10,7 @@ import { useEffect } from 'react'
 import { AuthProvider, useAuth} from './providers/authprovider.jsx';
 import LearningSeries from './LearningSeries.jsx'
 import LearningSeriesHub from './LearningSeriesHub.jsx'
+import Profile from './Profile.jsx'
 
 
 
@@ -29,6 +30,7 @@ const { auth } = useAuth();
             <Route path='/login' element={<Login/>}></Route>
             <Route path='/learninghub' element={<LearningSeriesHub/>}></Route>
             <Route path='/series/:seriesId' element={<LearningSeries/>}></Route>
+            <Route path='/profile' element={<Profile/>}></Route>
           </Routes>
           </div>
 
