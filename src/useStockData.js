@@ -1,6 +1,6 @@
 // useStockData.js
 import { useState, useEffect } from 'react';
-import { fetchStockData } from './services/stock.service';
+import { fetchStockData } from './services/liveMarkets/stock.service';
 
 export const useStockData = (ticker, timeSpan, startDate, endDate) => {
   const [series, setSeries] = useState([]);

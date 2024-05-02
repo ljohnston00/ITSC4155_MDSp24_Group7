@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import LearningSeriesCard from '../component/LearningSeriesCard';
-import { fetchAllLearningSeriesData } from '../services/learningSeries.service'; 
+import { fetchAllLearningSeriesData } from '../services/learningService/learningSeries.service'; 
 
 const LearningSeriesHub = () => {
   const [seriesList, setSeriesList] = useState([]);
@@ -11,7 +11,7 @@ const LearningSeriesHub = () => {
   }, []);
 
   return (
-    <Container>
+    <Container className='learningHub'>
       <h1 className='learningTitle'>Learning Series Hub</h1>
       <Row>
         {seriesList.map((series, index) => (
