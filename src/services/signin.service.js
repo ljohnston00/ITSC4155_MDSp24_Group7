@@ -3,7 +3,7 @@ import { ApiError } from "./error.service";
 
 const signinHandler = async (email, password) => {
     try{
-    const signInResponse = await fetch('https://money-market-api-production.up.railway.app/auth/signin', {
+    const signInResponse = await fetch('http://localhost:5000/auth/signin', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',

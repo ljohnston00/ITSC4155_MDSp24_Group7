@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
 import { fetchMarketNews } from '../services/news.service';
-import NewsCard from './NewsCard';
+import NewsCard from '../component/NewsCard';
 
 function News() {
     const [newsData, setNewsData] = useState([]);
