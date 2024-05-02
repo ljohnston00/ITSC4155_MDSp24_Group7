@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import LearningSeriesCard from './LearningSeriesCard';
-import { fetchAllLearningSeriesData } from './services/learningSeries.service'; // Import the new service
+import { fetchAllLearningSeriesData } from '../services/learningSeries.service'; // Import the new service
 
 const LearningSeriesHub = () => {
   const [seriesList, setSeriesList] = useState([]);

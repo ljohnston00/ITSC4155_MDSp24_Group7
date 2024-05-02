@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import signinHandler from './services/signin.service';
-import createAccount from './services/createAccount.service';
-import { useAuth } from './providers/authprovider';
+import signinHandler from '../services/signin.service';
+import createAccount from '../services/createAccount.service';
+import { useAuth } from '../providers/authprovider';
 import { useNavigate } from 'react-router-dom';
 
 
