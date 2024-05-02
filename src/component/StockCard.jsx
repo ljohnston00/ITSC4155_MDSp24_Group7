@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Card, Form } from 'react-bootstrap';
 import ReactApexChart from 'react-apexcharts';
 import Cookies from 'js-cookie';
-import { fetchStockData } from './services/stock.service';
-import { useStockData } from './useStockData';
+import { fetchStockData } from '../services/liveMarkets/stock.service';
+import { useStockData } from '../useStockData';
 
 const StockCard = ( { timeSpan, startDate, endDate }) => {
 

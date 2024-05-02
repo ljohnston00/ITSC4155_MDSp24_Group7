@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Row, Col } from 'react-bootstrap';
-import Sidebar from './SideBar';
-import StockCard from './StockCard';
+import Sidebar from '../component/SideBar';
+import StockCard from '../component/StockCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function LiveMarkets(){

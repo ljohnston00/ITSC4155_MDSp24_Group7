@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 export const fetchStockData = async (ticker, timeSpan, startDate, endDate) => {
   const token = Cookies.get('Authorization');
   const limit = '100';
-  const response = await fetch("http://localhost:5000/stockdata/ticker", {
+  const response = await fetch("https://moneymarket.up.railway.app/stockdata/ticker", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

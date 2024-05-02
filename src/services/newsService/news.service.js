@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 
 export const fetchMarketNews = async () => {
   const token = Cookies.get('Authorization');
-  const response = await fetch("http://localhost:5000/news/market-news", {
+  const response = await fetch("https://moneymarket.up.railway.app/news/market-news", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import signoutHandler from './services/logout.service';
+import signoutHandler from '../services/auth/logout.service';
 import { Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
 function Header(props){
