@@ -1,16 +1,16 @@
-import Header from './Header.jsx'
-import Footer from './Footer.jsx'
-import Index from './Index.jsx'
-import LiveMarkets from './LiveMarkets.jsx'
-import Dashboard from './Dashboard.jsx'
-import Login from './Login.jsx'
-import News from './News.jsx'
+import Header from './component/Header.jsx'
+import Footer from './component/Footer.jsx'
+import Index from './page/Index.jsx'
+import LiveMarkets from './page/LiveMarkets.jsx'
+import Dashboard from './page/Dashboard.jsx'
+import Login from './page/Login.jsx'
+import News from './page/News.jsx'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react'
 import { AuthProvider, useAuth} from './providers/authprovider.jsx';
-import LearningSeries from './LearningSeries.jsx'
-import LearningSeriesHub from './LearningSeriesHub.jsx'
-import Profile from './ProfilePage.jsx'
+import LearningSeries from './page/LearningSeries.jsx'
+import LearningSeriesHub from './page/LearningSeriesHub.jsx'
+import Profile from './page/ProfilePage.jsx'
 
 
 
