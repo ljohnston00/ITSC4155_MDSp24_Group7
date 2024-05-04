@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import LearningSeriesCard from '../component/LearningSeriesCard';
 import { fetchAllLearningSeriesData } from '../services/learningService/learningSeries.service'; 
+import withAuth from '../component/RestrictedPage';
 
 const LearningSeriesHub = () => {
   const [seriesList, setSeriesList] = useState([]);
@@ -24,4 +25,4 @@ const LearningSeriesHub = () => {
   );
 };
 
-export default LearningSeriesHub;
+export default withAuth(LearningSeriesHub);

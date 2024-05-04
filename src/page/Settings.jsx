@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Row, Col } from 'react-bootstrap';
+import withAuth from '../component/RestrictedPage';
 
 function Settings() {
 /*
@@ -47,4 +48,4 @@ function Settings() {
   );
 }
 
-export default Settings;
+export default withAuth(Settings);

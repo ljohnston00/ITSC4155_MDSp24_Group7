@@ -1,9 +1,10 @@
 import Cookies from 'js-cookie';
 import { ApiError } from "../error.service";
+import Paths from "../path.service";
 
 const signinHandler = async (email, password) => {
     try{
-    const signInResponse = await fetch('https://moneymarket.up.railway.app/auth/signin', {
+    const signInResponse = await fetch(`${Paths.API_BASE}/auth/signin`, {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',
