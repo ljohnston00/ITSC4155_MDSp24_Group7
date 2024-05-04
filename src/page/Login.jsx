@@ -3,6 +3,7 @@ import signinHandler from '../services/auth/signin.service';
 import createAccount from '../services/auth/createAccount.service';
 import { useAuth } from '../providers/authprovider';
 import { useNavigate } from 'react-router-dom';
+import Paths from '../services/path.service';
 
 
 
@@ -23,7 +24,7 @@ function Index(){
       if (success) {
         setAuth(true); 
         setLoginError(''); 
-        nav('/dashboard');
+        nav(Paths.DASHBOARD);
         window.scrollTo(0, 0);
       } else {
         setLoginError('Invalid email or password');

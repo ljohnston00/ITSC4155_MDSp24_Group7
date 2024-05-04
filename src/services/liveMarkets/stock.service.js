@@ -1,9 +1,10 @@
 import Cookies from 'js-cookie';
+import Paths from "../path.service";
 
 export const fetchStockData = async (ticker, timeSpan, startDate, endDate) => {
   const token = Cookies.get('Authorization');
   const limit = '100';
-  const response = await fetch("https://moneymarket.up.railway.app/stockdata/ticker", {
+  const response = await fetch(`${Paths.API_BASE}/stockdata/ticker`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

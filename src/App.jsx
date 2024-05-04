@@ -12,6 +12,7 @@ import LearningSeries from './page/LearningSeries.jsx'
 import LearningSeriesHub from './page/LearningSeriesHub.jsx'
 import Profile from './page/ProfilePage.jsx'
 import Settings from './page/Settings.jsx'
+import CreateLearningSeries from './page/CreateLearningSeries.jsx';
 import Paths from "./services/path.service.js";
 import React from 'react';
 import ErrorBoundary from './component/ErrorBoundary.jsx';
@@ -27,13 +28,14 @@ const { auth } = useAuth();
         <Header isLoggedIn={auth}/>
         <div className='content'>
           <Routes>
-              <Route path={Paths.HOME} element={<><Index /> <h1>{}</h1></>}/>
+              <Route path={Paths.HOME} element={<><Index /></>}/>
               <Route path={Paths.STOCKDATA} element={<LiveMarkets/>}/>
               <Route path={Paths.NEWS} element={<News/>}/>
               <Route path={Paths.DASHBOARD} element={<Dashboard/>}/>
               <Route path={Paths.LOGIN} element={<Login/>}/>
               <Route path={Paths.LEARNINGHUB} element={<LearningSeriesHub/>}/>
               <Route path={Paths.SERIES + '/:seriesId'} element={<LearningSeries/>}/>
+              <Route path={Paths.CREATELEARNINGSERIES} element={<CreateLearningSeries/>}/>
               <Route path={Paths.PROFILE} element={<Profile/>}/>
               <Route path={Paths.SETTINGS} element={<Settings/>}/>
           </Routes>

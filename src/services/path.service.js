@@ -6,6 +6,7 @@ const Paths = {
     STOCKDATA : "/stockdata",
     CONTENT_HUB : "/content-hub",
     LEARNINGHUB : "/learninghub",
+    CREATELEARNINGSERIES : "/learninghub/create",
     PROFILE : "/profile",
     SETTINGS : "/settings",
     SERIES: "/series",
