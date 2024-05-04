@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import withAuth from '../component/RestrictedPage';
 
 function Profile() {
   const user = {
@@ -30,4 +31,4 @@ function Profile() {
   );
 }
 
-export default Profile;
+export default withAuth(Profile);

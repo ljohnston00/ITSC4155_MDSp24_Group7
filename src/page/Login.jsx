@@ -23,7 +23,7 @@ function Index(){
       if (success) {
         setAuth(true); 
         setLoginError(''); 
-        nav('/');
+        nav('/dashboard');
         window.scrollTo(0, 0);
       } else {
         setLoginError('Invalid email or password');

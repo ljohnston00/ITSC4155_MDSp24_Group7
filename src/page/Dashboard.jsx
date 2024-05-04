@@ -1,3 +1,5 @@
+import withAuth from '../component/RestrictedPage';
+
 function Index(props){
 
     return(
@@ -10,4 +12,4 @@ function Index(props){
     );
 }
 
-export default Index;
+export default withAuth(Index);
