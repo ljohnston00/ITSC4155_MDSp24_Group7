@@ -11,7 +11,6 @@ import { AuthProvider, useAuth } from './providers/authprovider.jsx';
 import LearningSeries from './page/LearningSeries.jsx'
 import LearningSeriesHub from './page/LearningSeriesHub.jsx'
 import Profile from './page/ProfilePage.jsx'
-import Settings from './page/Settings.jsx'
 import CreateLearningSeries from './page/CreateLearningSeries.jsx';
 import Paths from "./services/path.service.js";
 import React from 'react';
@@ -36,7 +35,6 @@ const { auth } = useAuth();
               <Route path={Paths.SERIES + '/:seriesId'} element={<LearningSeries/>}/>
               <Route path={Paths.CREATELEARNINGSERIES} element={<CreateLearningSeries/>}/>
               <Route path={Paths.PROFILE} element={<Profile/>}/>
-              <Route path={Paths.SETTINGS} element={<Settings/>}/>
           </Routes>
           </div>
 
