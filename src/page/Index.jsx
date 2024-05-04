@@ -1,6 +1,6 @@
-import firstPicture from './assets/MM1.jpg'
-import secondPicture from './assets/MM2.png'
-import thirdPicture from './assets/MM3.png'
+import firstPicture from '../assets/MM1.jpg'
+import secondPicture from '../assets/MM2.png'
+import thirdPicture from '../assets/MM3.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button } from 'react-bootstrap'
 
@@ -50,7 +50,7 @@ function Index(){
                 <input className='input' type="text" id="firstName" name="firstName" placeholder='First Name'  required/>
                 <input className='input' type="text" id="lastName" name="lastName" placeholder='Last Name'  required/>
                 <input className='input'type="email" id="email" name="email" placeholder='Email'  required/>
-                <textarea className='input-t' id="details" cols="20" rows="2" placeholder="Message" name="content" required minlength="10"></textarea>
+                <textarea className='input-t' id="details" cols="20" rows="2" placeholder="Message" name="content" required minLength="10"></textarea>
               </form>
             </div>
             <p className='bottom-2'>Money Market is maintained by Alpha Storm Project and was created by students in ITSC 4155 at the University of North Carolina at Charlotte in 2024.</p>

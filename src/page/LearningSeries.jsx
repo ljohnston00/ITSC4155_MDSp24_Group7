@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col, ListGroup, Image, Button } from 'react-bootstrap';
-import { fetchLearningSeriesData } from './services/learningSeries.service';
+import { fetchLearningSeriesData } from '../services/learningService/learningSeries.service';
+import withAuth from '../component/RestrictedPage';
 
 const LearningSeries = () => {
   const { seriesId } = useParams();
@@ -60,4 +61,4 @@ const LearningSeries = () => {
   );
 };
 
-export default LearningSeries;
+export default withAuth(LearningSeries);

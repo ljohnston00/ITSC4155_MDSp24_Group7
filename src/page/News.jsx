@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Row, Col, Container } from 'react-bootstrap';
-import { fetchMarketNews } from './services/news.service';
-import NewsCard from './NewsCard';
+import { fetchMarketNews } from '../services/newsService/news.service';
+import NewsCard from '../component/NewsCard';
+import withAuth from '../component/RestrictedPage';
 
 function News() {
     const [newsData, setNewsData] = useState([]);
@@ -26,4 +27,4 @@ function News() {
     );
   }
   
-  export default News;
+  export default withAuth(News);

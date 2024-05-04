@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import LearningSeriesCard from './LearningSeriesCard';
-import { fetchAllLearningSeriesData } from './services/learningSeries.service'; // Import the new service
+import LearningSeriesCard from '../component/LearningSeriesCard';
+import { fetchAllLearningSeriesData } from '../services/learningService/learningSeries.service'; 
+import withAuth from '../component/RestrictedPage';
 
 const LearningSeriesHub = () => {
   const [seriesList, setSeriesList] = useState([]);
 
   useEffect(() => {
-    fetchAllLearningSeriesData().then(data => setSeriesList(data)); // Use the new service
+    fetchAllLearningSeriesData().then(data => setSeriesList(data)); 
   }, []);
 
   return (
-    <Container>
+    <Container className='learningHub'>
       <h1 className='learningTitle'>Learning Series Hub</h1>
       <Row>
         {seriesList.map((series, index) => (
@@ -24,4 +25,4 @@ const LearningSeriesHub = () => {
   );
 };
 
-export default LearningSeriesHub;
+export default withAuth(LearningSeriesHub);

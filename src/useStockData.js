@@ -1,10 +1,11 @@
-// useStockData.js
 import { useState, useEffect } from 'react';
-import { fetchStockData } from './services/stock.service';
+import { fetchStockData } from './services/liveMarkets/stock.service';
 
 export const useStockData = (ticker, timeSpan, startDate, endDate) => {
-  const [series, setSeries] = useState([]);
-  const [options, setOptions] = useState({});
+  const [priceSeries, setPriceSeries] = useState([]);
+  const [volumeSeries, setVolumeSeries] = useState([]);
+  const [priceOptions, setPriceOptions] = useState({});
+  const [volumeOptions, setVolumeOptions] = useState({});
 
   useEffect(() => {
     if (!ticker) {
@@ -13,17 +14,22 @@ export const useStockData = (ticker, timeSpan, startDate, endDate) => {
     fetchStockData(ticker, timeSpan, startDate, endDate)
       .then(data => {
         if (Array.isArray(data.results)) {
-          setSeries([{
+          setPriceSeries([{
             name: "Stock price",
             data: data.results.map(result => result.c) 
           }]);
+          setVolumeSeries([{
+            name: "Volume",
+            data: data.results.map(result => result.v)
+          }]);
         
-          setOptions({
+          setPriceOptions({
             chart: {
               type: 'line'
             },
-            colors: ['#FAF4D3'],
+            colors: ['#FAF4D3'], 
             xaxis: {
+              type: 'datetime',
               categories: data.results.map(result => new Date(result.t).toLocaleDateString()),
               labels: {
                 style: {
@@ -43,6 +49,40 @@ export const useStockData = (ticker, timeSpan, startDate, endDate) => {
                 colors: '#FAF4D3',
               },
             },
+            tooltip: {
+              theme: 'dark'
+            }
+          });
+
+          setVolumeOptions({
+            chart: {
+              type: 'line'
+            },
+            colors: ['#FAF4D3'], 
+            xaxis: {
+              type: 'datetime',
+              categories: data.results.map(result => new Date(result.t).toLocaleDateString()),
+              labels: {
+                style: {
+                  colors: '#FAF4D3',
+                },
+              },
+            },
+            yaxis: {
+              labels: {
+                style: {
+                  colors: '#FAF4D3',
+                },
+              },
+            },
+            title: {
+              style: {
+                colors: '#FAF4D3',
+              },
+            },
+            tooltip: {
+              theme: 'dark'
+            }
           });
         } else {
           console.error('Unexpected response structure:', data);
@@ -53,5 +93,5 @@ export const useStockData = (ticker, timeSpan, startDate, endDate) => {
       });
   }, [ticker, timeSpan, startDate, endDate]);
 
-  return { series, options };
+  return { priceSeries, volumeSeries, priceOptions, volumeOptions };
 };

@@ -1,13 +1,13 @@
 import Cookies from 'js-cookie';
-import image1 from '../assets/stockMarketNY.jpg';
-import image2 from '../assets/dayTrading.jpg';
-import image3 from '../assets/commodities.jpg';
-import image4 from '../assets/stockPriceGraph.jpg';
-import image5 from '../assets/pennyStockGraphs.jpg';
-import image6 from '../assets/longTermInvestments.jpg';
-import image7 from '../assets/investingImage.jpg';
-import image8 from '../assets/forexImage.jpg';
-import image9 from '../assets/whatShouldIBuyImage.jpg';
+import image1 from '../../assets/stockMarketNY.jpg';
+import image2 from '../../assets/dayTrading.jpg';
+import image3 from '../../assets/commodities.jpg';
+import image4 from '../../assets/stockPriceGraph.jpg';
+import image5 from '../../assets/pennyStockGraphs.jpg';
+import image6 from '../../assets/longTermInvestments.jpg';
+import image7 from '../../assets/investingImage.jpg';
+import image8 from '../../assets/forexImage.jpg';
+import image9 from '../../assets/whatShouldIBuyImage.jpg';
 
 const mockData = [
   {

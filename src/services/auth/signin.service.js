@@ -1,8 +1,10 @@
 import Cookies from 'js-cookie';
+import { ApiError } from "../error.service";
+import Paths from "../path.service";
 
 const signinHandler = async (email, password) => {
     try{
-    const signInResponse = await fetch('http://localhost:5000/auth/signin', {
+    const signInResponse = await fetch(`${Paths.API_BASE}/auth/signin`, {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json',
@@ -22,7 +24,10 @@ const signinHandler = async (email, password) => {
     return true;
   } catch (err) {
     console.log(err);
-    return false;
+        if(err.response.status === 401) {
+            return ApiError.UNAUTHORIZED;
+        }
+        return null;
   }
 };
 

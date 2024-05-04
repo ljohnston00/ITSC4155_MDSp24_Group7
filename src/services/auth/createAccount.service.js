@@ -1,8 +1,9 @@
 import Cookies from 'js-cookie';
+import Paths from "../path.service";
 
 const createAccount = async (firstName, lastName, username, email, password) => {
   console.log('Creating account...');
-  const signUpResponse = await fetch('http://localhost:5000/auth/signup', {
+  const signUpResponse = await fetch(`${Paths.API_BASE}/auth/signup`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
