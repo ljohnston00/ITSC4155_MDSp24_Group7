@@ -18,14 +18,13 @@ import React from 'react';
 import ErrorBoundary from './component/ErrorBoundary.jsx';
 
 
-
 function Main() {
 const { auth } = useAuth();
  
   return (
     <Router>
       <>
-        <Header isLoggedIn={auth}/>
+        <Header isLoggedIn={!!auth}/>
         <div className='content'>
           <Routes>
               <Route path={Paths.HOME} element={<><Index /></>}/>
@@ -50,8 +49,8 @@ const { auth } = useAuth();
 function App() {
   return (
     <AuthProvider>
-    <Main />
-  </AuthProvider>
+      <Main />
+    </AuthProvider>
   );
 }
 
