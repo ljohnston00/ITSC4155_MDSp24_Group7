@@ -7,11 +7,15 @@ import Login from './page/Login.jsx'
 import News from './page/News.jsx'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react'
-import { AuthProvider, useAuth} from './providers/authprovider.jsx';
+import { AuthProvider, useAuth } from './providers/authprovider.jsx';
 import LearningSeries from './page/LearningSeries.jsx'
 import LearningSeriesHub from './page/LearningSeriesHub.jsx'
 import Profile from './page/ProfilePage.jsx'
-
+import Settings from './page/Settings.jsx'
+import CreateLearningSeries from './page/CreateLearningSeries.jsx';
+import Paths from "./services/path.service.js";
+import React from 'react';
+import ErrorBoundary from './component/ErrorBoundary.jsx';
 
 
 function Main() {
@@ -23,14 +27,16 @@ const { auth } = useAuth();
         <Header isLoggedIn={!!auth}/>
         <div className='content'>
           <Routes>
-            <Route path='/' element={<><Index /> <h1>{}</h1></>}></Route>
-            <Route path='/stockdata' element={<LiveMarkets/>}></Route>
-            <Route path='/news' element={<News/>}></Route>
-            <Route path='/dashboard' element={<Dashboard/>}></Route>
-            <Route path='/login' element={<Login/>}></Route>
-            <Route path='/learninghub' element={<LearningSeriesHub/>}></Route>
-            <Route path='/series/:seriesId' element={<LearningSeries/>}></Route>
-            <Route path='/profile' element={<Profile/>}></Route>
+              <Route path={Paths.HOME} element={<><Index /></>}/>
+              <Route path={Paths.STOCKDATA} element={<LiveMarkets/>}/>
+              <Route path={Paths.NEWS} element={<News/>}/>
+              <Route path={Paths.DASHBOARD} element={<Dashboard/>}/>
+              <Route path={Paths.LOGIN} element={<Login/>}/>
+              <Route path={Paths.LEARNINGHUB} element={<LearningSeriesHub/>}/>
+              <Route path={Paths.SERIES + '/:seriesId'} element={<LearningSeries/>}/>
+              <Route path={Paths.CREATELEARNINGSERIES} element={<CreateLearningSeries/>}/>
+              <Route path={Paths.PROFILE} element={<Profile/>}/>
+              <Route path={Paths.SETTINGS} element={<Settings/>}/>
           </Routes>
           </div>
 
