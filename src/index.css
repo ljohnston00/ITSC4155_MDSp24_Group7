@@ -306,6 +306,25 @@ a{
     margin-top: auto;
 }
 
+/*Error Boundary*/
+.ErrorBoundary {
+  
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #004643;
+  color: #FAF4D3;
+}
+
+.errMsg{
+  background-color: #0C1618;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
 /*Live Markets*/
 .liveMarketContainer{
   display: flex;
