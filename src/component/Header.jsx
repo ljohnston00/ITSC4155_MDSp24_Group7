@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import signoutHandler from '../services/auth/logout.service';
+import handleSubscription from '../services/subscription/subscription.serivce';
 import { Nav, NavDropdown, Navbar } from 'react-bootstrap';
 
 function Header(props){
@@ -18,6 +19,7 @@ function Header(props){
         <Nav> 
           <NavDropdown title="Menu" id="nav-dropdown">
             <Nav.Link className = 'App-link nonTitle-nLI dropDownNav' href="/profile">Profile</Nav.Link>
+            <Nav.Link className = 'App-link nonTitle-nLI dropDownNav' onClick={handleSubscription}>Subscribe</Nav.Link>
             <Nav.Link className = 'App-link nonTitle-nLI dropDownNav' href="/login" onClick={signoutHandler}>Logout</Nav.Link>
           </NavDropdown>
         </Nav>

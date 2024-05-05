@@ -10,7 +10,10 @@ const Paths = {
     PROFILE : "/profile",
     SETTINGS : "/settings",
     SERIES: "/series",
-    DASHBOARD : "/dashboard"
+    DASHBOARD : "/dashboard",
+    CHECKOUTSESSION : "/checkout/session",
+    SUCCESS : "/success",
+    FAILURE : "/failure"
 };
 
 export default Paths;

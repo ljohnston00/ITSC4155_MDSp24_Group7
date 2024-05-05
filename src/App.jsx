@@ -15,6 +15,8 @@ import CreateLearningSeries from './page/CreateLearningSeries.jsx';
 import Paths from "./services/path.service.js";
 import React from 'react';
 import ErrorBoundary from './component/ErrorBoundary.jsx';
+import SuccessPage from './page/SuccessPage';
+import FailurePage from './page/FailurePage';
 
 
 function Main() {
@@ -36,6 +38,8 @@ const { auth } = useAuth();
                 <Route path={Paths.SERIES + '/:seriesId'} element={<LearningSeries/>}/>
                 <Route path={Paths.CREATELEARNINGSERIES} element={<CreateLearningSeries/>}/>
                 <Route path={Paths.PROFILE} element={<Profile/>}/>
+                <Route path={Paths.SUCCESS} element={<SuccessPage />} /> 
+                <Route path={Paths.FAILURE} element={<FailurePage />} /> 
             </Routes>
           </ErrorBoundary>
           </div>
