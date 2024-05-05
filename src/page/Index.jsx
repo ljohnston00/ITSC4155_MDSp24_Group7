@@ -1,4 +1,4 @@
-import firstPicture from '../assets/MM1.jpg'
+import firstPicture from '../assets/MM1.png'
 import secondPicture from '../assets/MM2.png'
 import thirdPicture from '../assets/MM3.png'
 import 'bootstrap/dist/css/bootstrap.min.css'

@@ -15,13 +15,8 @@ const createSubscription = async () => {
           'Authorization': `Bearer ${token}`
         }
       });
-  
-      console.log('Response', response);
 
       const session = await response.json();
-  
-      console.log("session:", session);
-      console.log("session id:", session.id);
   
       const stripe = await stripePromise;
       const { error } = await stripe.redirectToCheckout({
