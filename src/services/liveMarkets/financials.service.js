@@ -35,12 +35,17 @@ export const useFinancialData = (ticker) => {
       })
     })
     .then(response => {
-      if (!response.ok) {
-        const error = new Error('Failed to fetch financial data');
-        error.status = response.status;
-        throw error;
-      }
-      return response.json();
+
+      if(response.status === 401){
+        nav(Paths.LOGIN);
+        return;
+      } 
+        if (!response.ok) {
+          const error = new Error('Failed to fetch financial data');
+          error.status = response.status;
+          throw error;
+        }
+        return response.json();
     })
     .then(data => {
       if (Array.isArray(data.results)) {

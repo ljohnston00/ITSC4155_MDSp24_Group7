@@ -1,7 +1,8 @@
 import Cookies from 'js-cookie';
 import Paths from '../path.service';
+import { useNavigate } from 'react-router-dom';
 
-  export const fetchLearningSeriesData = async (seriesId) => {
+  export const fetchLearningSeriesData = async (seriesId, nav) => {
     try {
     const token = Cookies.get('Authorization');
     
@@ -13,10 +14,15 @@ import Paths from '../path.service';
       },
       body: JSON.stringify({ learningSeriesId: seriesId })
     });
+
+    if(seriesResponse.status === 401){
+      nav(Paths.LOGIN);
+      return;
+    } 
   
     if (!seriesResponse.ok) {
       const error = new Error('Failed to fetch learning series data');
-      error.status = seriesReponse.status;
+      error.status = seriesResponse.status;
       throw error;
     }
   
@@ -30,6 +36,9 @@ import Paths from '../path.service';
       },
       body: JSON.stringify({ learningSeriesId: seriesId })
     });
+
+    
+    
   
     if (!partsResponse.ok) {
       console.log('Failed to fetch parts for the series');
@@ -49,7 +58,7 @@ import Paths from '../path.service';
   };
   
   
-  export const fetchAllLearningSeriesData = async () => {
+  export const fetchAllLearningSeriesData = async (nav) => {
     try {
       const token = Cookies.get('Authorization');
       const response = await fetch(`${Paths.API_BASE}/contentmanagement/home`, {
@@ -58,6 +67,11 @@ import Paths from '../path.service';
           'Authorization': `Bearer ${token}`
         }
       });
+
+      if (response.status === 401){
+        nav(Paths.LOGIN);
+        return;
+      }
   
       if (!response.ok) {
         const error = new Error('Failed to fetch all learning series data');
@@ -68,7 +82,6 @@ import Paths from '../path.service';
       const data = await response.json();
       return data;
     } catch(err) {
-      console.log(err);
       throw err;
     }
   };

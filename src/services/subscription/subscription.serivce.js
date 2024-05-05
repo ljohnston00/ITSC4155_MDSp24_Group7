@@ -16,9 +16,12 @@ const createSubscription = async () => {
         }
       });
   
+      console.log('Response', response);
+
       const session = await response.json();
   
-      console.log(session);
+      console.log("session:", session);
+      console.log("session id:", session.id);
   
       const stripe = await stripePromise;
       const { error } = await stripe.redirectToCheckout({
@@ -29,7 +32,7 @@ const createSubscription = async () => {
         console.log(error.message);
       }
     } catch (err) {
-      console.error(err);
+      console.error(err.message);
     }
   };
   

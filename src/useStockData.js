@@ -6,6 +6,7 @@ export const useStockData = (ticker, timeSpan, startDate, endDate) => {
   const [volumeSeries, setVolumeSeries] = useState([]);
   const [priceOptions, setPriceOptions] = useState({});
   const [volumeOptions, setVolumeOptions] = useState({});
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!ticker) {
@@ -90,8 +91,9 @@ export const useStockData = (ticker, timeSpan, startDate, endDate) => {
       })
       .catch((error) => {
         console.log('Failed to fetch stock data', error);
+        setError(error);
       });
   }, [ticker, timeSpan, startDate, endDate]);
 
-  return { priceSeries, volumeSeries, priceOptions, volumeOptions };
+  return { priceSeries, volumeSeries, priceOptions, volumeOptions, error };
 };

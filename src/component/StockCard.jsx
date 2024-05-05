@@ -2,10 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { Card, Form } from 'react-bootstrap';
 import ReactApexChart from 'react-apexcharts';
 import { useStockData } from '../useStockData';
+import { useNavigate } from 'react-router-dom';
+import Paths from '../services/path.service';
 
   const StockCard = ({ ticker, timeSpan, startDate, endDate }) => {
-    const { priceSeries, volumeSeries, priceOptions, volumeOptions } = useStockData(ticker, timeSpan, startDate, endDate);
+    const nav = useNavigate();
+    const { priceSeries, volumeSeries, priceOptions, volumeOptions, error } = useStockData(ticker, timeSpan, startDate, endDate);
     
+    useEffect(() => {
+      if (error && error.message === 'Unauthorized') {
+        nav(Paths.LOGIN);
+      }
+    }, [error, nav]);
+
     return (
       
       <Card className='stockCard'>

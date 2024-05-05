@@ -20,6 +20,10 @@ export const fetchStockData = async (ticker, timeSpan, startDate, endDate) => {
         })
       });
 
+    if(response.status === 401){
+      throw new Error('Unauthorized');
+    } 
+
     if (!response.ok) {
       const error = new Error('Failed to fetch stock data');
       error.status = response.status;

@@ -12,8 +12,8 @@ const Paths = {
     SERIES: "/series",
     DASHBOARD : "/dashboard",
     CHECKOUTSESSION : "/checkout/session",
-    SUCCESS : "/success",
-    FAILURE : "/failure"
+    SUCCESS : "/checkout/session/success",
+    FAILURE : "/checkout/session/failure"
 };
 
 export default Paths;

@@ -3,16 +3,23 @@ import { useParams } from 'react-router-dom';
 import { Container, Row, Col, ListGroup, Image, Button } from 'react-bootstrap';
 import { fetchLearningSeriesData } from '../services/learningService/learningSeries.service';
 import withAuth from '../component/RestrictedPage';
+import { useNavigate } from 'react-router-dom';
 
 const LearningSeries = () => {
   const { seriesId } = useParams();
   const [series, setSeries] = useState(null);
   const [currentPart, setCurrentPart] = useState(0); 
   const [sidebarOpen, setSidebarOpen] = useState(true); 
+  const nav = useNavigate();
 
   useEffect(() => {
-    fetchLearningSeriesData(seriesId).then(data => setSeries(data));
-  }, [seriesId]);
+    const fetchData = async () => {
+      const data = await fetchLearningSeriesData(seriesId, nav);
+      setSeries(data);
+    };
+
+    fetchData();
+  }, [seriesId, nav]);
 
   if (!series) return <div>Loading...</div>;
 
@@ -48,7 +55,6 @@ const LearningSeries = () => {
         <Col md={8} className='seriesContent'>
           <h2>{series.parts && series.parts[currentPart] ? series.parts[currentPart].title : series.title}</h2>
           <hr></hr>
-          {console.log(series)}
           <Image className='seriesImage' variant="top" src={series.coverArtId} />
           <hr></hr>
           <p>{series.parts && series.parts[currentPart] ? series.parts[currentPart].description : 'There is no content for this series yet.'}</p>
