@@ -371,15 +371,24 @@ a{
   border-radius: 8px;
   margin: 1rem;
   padding: 1rem;
-  margin-bottom: 0;
-  margin-top: 2rem;
 }
+
+.topContainerOutside{
+  background-color: #0C1618;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
 .tickerShow{
   margin: 1rem;
 }
 .graphs{
   display: flex;
   flex-direction: row;
+  background-color: #0C1618;
+  border-radius: 8px;
+  margin: 1rem;
 }
 
 .graphCard{

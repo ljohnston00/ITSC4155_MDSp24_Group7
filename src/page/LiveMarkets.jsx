@@ -19,14 +19,16 @@ function LiveMarkets() {
 
   return (
     <div className="container-fluid liveMarketContainer">
-      <div className='topContainer' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}> {/* Modify this line */}
-        <h1 className='liveMarketsTitle'>Live Markets</h1>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Form inline className='tickerSearch'>
-            <Form.Control type="text" placeholder="Search" className="mr-sm-2 searchBar" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
-            <Button className='searchButton' variant="outline-success" onClick={handleSearch}>Search</Button>
-          </Form>
-          <h1 className='tickerShow'>{ticker}</h1>
+      <div className='topContainerOutside'>
+        <div className='topContainer' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100vh' }}> {/* Modify this line */}
+          <h1 className='liveMarketsTitle'>Live Markets</h1>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <Form inline className='tickerSearch'>
+              <Form.Control type="text" placeholder="Search" className="mr-sm-2 searchBar" value={searchTerm} onChange={e => setSearchTerm(e.target.value)} />
+              <Button className='searchButton' variant="outline-success" onClick={handleSearch}>Search</Button>
+            </Form>
+            <h1 className='tickerShow'>{ticker}</h1>
+          </div>
         </div>
       </div>
       <div className="row graphs">
