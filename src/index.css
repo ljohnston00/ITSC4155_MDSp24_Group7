@@ -1003,3 +1003,14 @@ h6 span {
   width: auto;
   display: block;
 }
+
+/*Profile page*/
+.profile-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  margin: auto;
+}
