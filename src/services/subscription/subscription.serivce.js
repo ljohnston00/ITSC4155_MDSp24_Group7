@@ -2,7 +2,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import Cookies from 'js-cookie';
 import Paths from "../path.service";
 
-const stripePromise = loadStripe("pk_live_51PD07B04Pi0sMGC4WVepxza75TcZaIBeGdosVTmUj3FveE5CJ4VfMA5qLVtbAgWzKFbuKeanzB5MppNRD7TRsPKb00m0sU5zvd");
+const stripePromise = loadStripe("pk_test_51OpF11G76qvcfE1h6K9Xto1rrc1X2AEFXikynboKnRu4rlVoPyF2Vd8A46Y2abxfwbf09JWJEDezifV8MXOikDAL00nI7bNx1I");
 
 const createSubscription = async () => {
     try {
@@ -15,13 +15,8 @@ const createSubscription = async () => {
           'Authorization': `Bearer ${token}`
         }
       });
-  
-      console.log('Response', response);
 
       const session = await response.json();
-  
-      console.log("session:", session);
-      console.log("session id:", session.id);
   
       const stripe = await stripePromise;
       const { error } = await stripe.redirectToCheckout({

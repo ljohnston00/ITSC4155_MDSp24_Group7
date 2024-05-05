@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import Cookies from 'js-cookie';
+import Paths from '../services/path.service';
 
 const AuthContext = createContext();
 
@@ -7,7 +9,24 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
-    setAuth(isLoggedIn === 'true');
+    fetch(`${Paths.API_BASE}/user`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${Cookies.get('Authorization')}`
+      }
+    })
+    .then(response => {
+      if (response.status === 401) {
+        localStorage.setItem('isLoggedIn', 'false');
+        setAuth(false);
+      } else {
+        setAuth(isLoggedIn === 'true');
+      }
+    })
+    .catch(error => {
+      console.error('Error checking auth status:', error);
+    });
   }, []);
 
   const value = { auth, setAuth };

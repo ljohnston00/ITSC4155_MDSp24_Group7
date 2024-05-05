@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Container, Row, Col, ListGroup, Image, Button } from 'react-bootstrap';
 import { fetchLearningSeriesData } from '../services/learningService/learningSeries.service';
-import withAuth from '../component/RestrictedPage';
+import withSubscription from '../component/withSubscription';
 import { useNavigate } from 'react-router-dom';
 
 const LearningSeries = () => {
@@ -71,4 +71,4 @@ const LearningSeries = () => {
   );
 };
 
-export default withAuth(LearningSeries);
+export default withSubscription(LearningSeries);
