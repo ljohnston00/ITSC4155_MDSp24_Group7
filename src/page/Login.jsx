@@ -34,6 +34,20 @@ function Index(){
     }
   };
 
+  const handleSignUp = async (event) => {
+    event.preventDefault(); 
+    try {
+      await createAccount(firstName, lastName, username, email, password);
+      await handleLogin();
+      nav(Paths.DASHBOARD);
+      window.scrollTo(0, 0);
+    } catch (error) {
+      console.error("Failed to create account:", error);
+      setLoginError(error.message || 'Failed to sign up');
+    }
+  };
+
+
   return(
   <div className="section">
     <div className="container">
@@ -67,7 +81,7 @@ function Index(){
                   <div className="center-wrap">
                     <div className="section text-center">
                       <h4 className="mb-4 pb-3">Sign Up</h4>
-        <form onSubmit={()=>createAccount(firstName, lastName, username, email, password)}>
+        <form onSubmit={handleSignUp}>
           <div className="form-group">
               <input type="text" className="form-style" placeholder="Your First Name" value={firstName} onChange={e => setFirstName(e.target.value)} />
               <i className="input-icon uil uil-user"></i>
