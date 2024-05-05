@@ -25,17 +25,19 @@ const { auth } = useAuth();
       <>
         <Header isLoggedIn={!!auth}/>
         <div className='content'>
-          <Routes>
-              <Route path={Paths.HOME} element={<><Index /></>}/>
-              <Route path={Paths.STOCKDATA} element={<LiveMarkets/>}/>
-              <Route path={Paths.NEWS} element={<News/>}/>
-              <Route path={Paths.DASHBOARD} element={<Dashboard/>}/>
-              <Route path={Paths.LOGIN} element={<Login/>}/>
-              <Route path={Paths.LEARNINGHUB} element={<LearningSeriesHub/>}/>
-              <Route path={Paths.SERIES + '/:seriesId'} element={<LearningSeries/>}/>
-              <Route path={Paths.CREATELEARNINGSERIES} element={<CreateLearningSeries/>}/>
-              <Route path={Paths.PROFILE} element={<Profile/>}/>
-          </Routes>
+          <ErrorBoundary>
+            <Routes>
+                <Route path={Paths.HOME} element={<><Index /></>}/>
+                <Route path={Paths.STOCKDATA} element={<LiveMarkets/>}/>
+                <Route path={Paths.NEWS} element={<News/>}/>
+                <Route path={Paths.DASHBOARD} element={<Dashboard/>}/>
+                <Route path={Paths.LOGIN} element={<Login/>}/>
+                <Route path={Paths.LEARNINGHUB} element={<LearningSeriesHub/>}/>
+                <Route path={Paths.SERIES + '/:seriesId'} element={<LearningSeries/>}/>
+                <Route path={Paths.CREATELEARNINGSERIES} element={<CreateLearningSeries/>}/>
+                <Route path={Paths.PROFILE} element={<Profile/>}/>
+            </Routes>
+          </ErrorBoundary>
           </div>
 
         <Footer/>
