@@ -15,7 +15,7 @@ function Header(props){
           <Nav.Link className = 'App-link nonTitle-nLI' href="/stockdata">Live Markets</Nav.Link>
           <Nav.Link className = 'App-link nonTitle-nLI' href="/news">News</Nav.Link>
         </Nav>
-        <Nav>
+        <Nav> 
           <NavDropdown title="Menu" id="nav-dropdown">
             <Nav.Link className = 'App-link nonTitle-nLI dropDownNav' href="/profile">Profile</Nav.Link>
             <Nav.Link className = 'App-link nonTitle-nLI dropDownNav' href="/login" onClick={signoutHandler}>Logout</Nav.Link>

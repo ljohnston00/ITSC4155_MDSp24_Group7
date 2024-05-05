@@ -32,7 +32,7 @@ const LearningSeries = () => {
     <Container>
       <h1 className='learningTitle'>{series.title}</h1>
       <Row className='series'>
-        {sidebarOpen && (
+        {sidebarOpen && series.parts && series.parts.length > 0 && (
           <Col md={4} className="seriesSidebar">
             <h2 className='sectionsTitle'>Sections</h2>
             <hr></hr>
@@ -46,15 +46,19 @@ const LearningSeries = () => {
           </Col>
         )}
         <Col md={8} className='seriesContent'>
-          <h2>{series.parts[currentPart].title}</h2> 
+          <h2>{series.parts && series.parts[currentPart] ? series.parts[currentPart].title : series.title}</h2>
           <hr></hr>
-          <Image className='seriesImage' variant="top" src={series.thumbnail} />
+          {console.log(series)}
+          <Image className='seriesImage' variant="top" src={series.coverArtId} />
           <hr></hr>
-          <p>{series.parts[currentPart].content}</p> 
-          <div className='d-flex justify-content-between'>
-          <Button className='seriesPreviousBtn' onClick={handlePrevious} disabled={currentPart === 0}>Previous</Button>
-          <Button className='seriesNextBtn' onClick={handleNext} disabled={currentPart === series.parts.length - 1}>Next</Button>
-          </div>
+          <p>{series.parts && series.parts[currentPart] ? series.parts[currentPart].description : 'There is no content for this series yet.'}</p>
+
+          {series.parts && series.parts.length > 0 && (
+            <div className='d-flex justify-content-between'>
+              <Button className='seriesPreviousBtn' onClick={handlePrevious} disabled={currentPart === 0}>Previous</Button>
+              <Button className='seriesNextBtn' onClick={handleNext} disabled={currentPart === series.parts.length - 1}>Next</Button>
+            </div>
+          )}
         </Col>
       </Row>
     </Container>

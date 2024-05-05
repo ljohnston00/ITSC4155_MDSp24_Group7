@@ -34,7 +34,14 @@ export const useFinancialData = (ticker) => {
         tickerName: ticker
       })
     })
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        const error = new Error('Failed to fetch financial data');
+        error.status = response.status;
+        throw error;
+      }
+      return response.json();
+    })
     .then(data => {
       if (Array.isArray(data.results)) {
         const financialRecords = data.results.map((result, i) => {
@@ -61,7 +68,8 @@ export const useFinancialData = (ticker) => {
       }
     })
     .catch((error) => {
-      console.log('Failed to fetch financial data', error);
+      console.log(error);
+      throw error
     });
   }, [ticker]);
 
